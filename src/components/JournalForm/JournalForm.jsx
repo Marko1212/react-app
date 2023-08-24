@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './JournalForm.module.css';
 import Button from '../Button/Button';
 import cn from 'classnames';
