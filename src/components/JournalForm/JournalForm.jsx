@@ -95,13 +95,13 @@ function JournalForm({ onSubmit, data, onDelete }) {
 		// console.log(formProps);
 		// onSubmit(formProps);
 		onSubmit(formValues);
-		/* 		setFormValues({
+		setFormValues({
 			id: '',
 			title: '',
 			post: '',
 			date: '',
 			tag: ''
-		}); */
+		});
 	};
 
 	const deleteJournalItem = () => {

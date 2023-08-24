@@ -34,6 +34,8 @@ function App() {
 	const [items, setItems] = useState(INITIAL_DATA);
 	const [selectedItem, setSelectedItem] = useState(INITIAL_SELECTED_ITEM);
 
+	console.log(selectedItem);
+
 	useEffect(() => {
 		const data = JSON.parse(localStorage.getItem('data'));
 		if (data) {
@@ -91,7 +93,7 @@ function App() {
 				})
 			]);
 		}
-		setSelectedItem(INITIAL_SELECTED_ITEM); // clear form
+	//	setSelectedItem(INITIAL_SELECTED_ITEM); // clear form
 	};
 
 	const deleteItem = (id) => {
