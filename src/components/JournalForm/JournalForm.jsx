@@ -32,7 +32,6 @@ function JournalForm({ onSubmit, data, onDelete }) {
 	};
 
 	useEffect(() => {
-		console.log(data);
 		setFormValues(data);
 	}, [data]);
 
