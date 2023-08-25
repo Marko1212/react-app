@@ -182,9 +182,9 @@ function JournalForm({ onSubmit, data, onDelete }) {
 				/* style={{ border: formValidState.post ? undefined : '1px solid red' }} */
 			></textarea>
 			<Button
-				text='Enregistrer'
+				/* text='Enregistrer' */
 				/* onClick={() => console.log('Click sur bouton')} */
-			/>
+			>Enregistrer</Button>
 		</form>
 	);
 }
