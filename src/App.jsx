@@ -50,15 +50,11 @@ function App() {
 		}
 	}, []); */
 
-	/* useEffect( */
-	/* () => console.log(items) */
-	/* 		() => {
-			if (items.length) {
-				console.log('enregistrement');
-				localStorage.setItem('data', JSON.stringify(items));
-			}
-		},
-		[items]
+	/* 	useEffect(() => {
+		console.log('enregistrement');
+		localStorage.setItem('data', JSON.stringify(items));
+	},
+	[items]
 	); */
 
 	// API call => items are updated, state is updated, so another render occurs
