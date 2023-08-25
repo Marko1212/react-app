@@ -1,6 +1,6 @@
 import './Button.css';
 
-function Button({ children, onClick }) {
+function Button({ children, ...props /* onClick */}) {
 	// let text = 'Enregistrer';
 	/* const [text, setText] = useState('Enregistrer');
 	console.log(text); */ // après click : Fermer
@@ -16,7 +16,8 @@ function Button({ children, onClick }) {
 	return (
 		<button
 			/* onClick={clicked}  */ className='button accent'
-			onClick={onClick}
+			/* onClick={onClick} */
+			{...props}
 		>
 			{children}
 		</button>
