@@ -26,7 +26,7 @@ function JournalAddButton({clearForm}) {
 					strokeLinejoin='round'
 				/>
 			</svg>
-			Nouveau souvenir
+			Nouvelle note
 		</CardButton>
 	);
 }
