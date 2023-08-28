@@ -19,6 +19,7 @@ function Button({ children, ...props /* onClick */}) {
 			/* onClick={onClick} */
 			{...props}
 		>
+			{/* "Enregistrer" */}
 			{children}
 		</button>
 	);
