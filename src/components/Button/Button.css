@@ -8,10 +8,10 @@
   border: none;
 }
 
-.accent:hover {
-  background: #222096;
-}
-
 .accent {
   background: #312eb5;
+}
+
+.accent:hover {
+  background: #222096;
 }
