@@ -24,7 +24,7 @@ function App() {
 			date: new Date()
 		} */
 	];
-	const INITIAL_SELECTED_ITEM={
+	const INITIAL_SELECTED_ITEM = {
 		id: '',
 		title: '',
 		post: '',
@@ -51,8 +51,10 @@ function App() {
 	}, []); */
 
 	/* 	useEffect(() => {
+		if (items.length !== 0) {
 		console.log('enregistrement');
 		localStorage.setItem('data', JSON.stringify(items));
+		}
 	},
 	[items]
 	); */
@@ -66,7 +68,7 @@ function App() {
 		if (!items) {
 			return [];
 		}
-		return items.map(i => ({
+		return items.map((i) => ({
 			...i,
 			date: new Date(i.date)
 		}));
@@ -74,11 +76,14 @@ function App() {
 
 	const addItem = (item) => {
 		if (!item.id) {
-			setItems([...mapItems(items), {
-				...item,
-				date: new Date(item.date),
-				id: items?.length > 0 ? Math.max(...items.map(i => i.id)) + 1 : 1
-			}]);
+			setItems([
+				...mapItems(items),
+				{
+					...item,
+					date: new Date(item.date),
+					id: items?.length > 0 ? Math.max(...items.map((i) => i.id)) + 1 : 1
+				}
+			]);
 			/* 			setItems((oldItems) => [
 				...oldItems,
 				{
@@ -90,17 +95,18 @@ function App() {
 						: 1
 				}
 			]);  */
-		} else 
-		{
-			setItems([...mapItems(items).map(i => {
-				if (i.id === item.id) {
-					return {
-						...item
-					};
-				}
-				return i;
-			})]);
-		
+		} else {
+			setItems([
+				...mapItems(items).map((i) => {
+					if (i.id === item.id) {
+						return {
+							...item
+						};
+					}
+					return i;
+				})
+			]);
+
 			/* 		setItems((oldItems) => [
 			...oldItems.map(i => {
 				if (i.id === item.id) {
@@ -113,11 +119,11 @@ function App() {
 			})
 		]); */
 		}
-	//	setSelectedItem(INITIAL_SELECTED_ITEM); // clear form
+		//	setSelectedItem(INITIAL_SELECTED_ITEM); // clear form
 	};
 
 	const deleteItem = (id) => {
-		setItems([...items.filter(i => i.id !== id)]);
+		setItems([...items.filter((i) => i.id !== id)]);
 		setSelectedItem(INITIAL_SELECTED_ITEM); // clear form
 	};
 
@@ -133,8 +139,13 @@ function App() {
 		<div className='app'>
 			<LeftPanel>
 				<Header />
-				<JournalAddButton clearForm={() => setSelectedItem(INITIAL_SELECTED_ITEM)} />
-				<JournalList /* items={items} */ items={mapItems(items)} setItem={setSelectedItem} />
+				<JournalAddButton
+					clearForm={() => setSelectedItem(INITIAL_SELECTED_ITEM)}
+				/>
+				<JournalList
+					/* items={items} */ items={mapItems(items)}
+					setItem={setSelectedItem}
+				/>
 				{/* 	{[<Button></Button>, <Button></Button>]} */}
 				{/* 		{items.length === 0 && (
 						<p>Pas de notes pour le moment, veuillez rajouter la première</p>
@@ -157,7 +168,11 @@ function App() {
 				{/* </JournalList> */}
 			</LeftPanel>
 			<Body>
-				<JournalForm onSubmit={addItem} data={selectedItem} onDelete={deleteItem} />
+				<JournalForm
+					onSubmit={addItem}
+					data={selectedItem}
+					onDelete={deleteItem}
+				/>
 				{/* 	<input type='text' value={inputData} onChange={inputChange} /> */}
 			</Body>
 			{/* 			<h1>Titre du texte</h1>
